@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dominant System — Webs profesionales para la Sierra de Madrid</title>
+  <meta name="description" content="Diseño y desarrollo de páginas web profesionales para negocios locales de la Sierra de Madrid. Más visitas, más contactos y más clientes." />
+  <link rel="canonical" href="https://dominant.es/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dominant.es/" />
+  <meta property="og:title" content="Dominant System — Webs profesionales para la Sierra de Madrid" />
+  <meta property="og:description" content="Diseño y desarrollo de páginas web profesionales para negocios locales de la Sierra de Madrid. Más visitas, más contactos y más clientes." />
+  <meta property="og:image" content="https://dominant.es/assets/og-image.png" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="Dominant System" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dominant System — Webs profesionales para la Sierra de Madrid" />
+  <meta name="twitter:description" content="Diseño y desarrollo de páginas web profesionales para negocios locales de la Sierra de Madrid. Más visitas, más contactos y más clientes." />
+  <meta name="twitter:image" content="https://dominant.es/assets/og-image.png" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <div class="nav-wrap">
+    <div class="container">
+      <nav class="nav-pill" aria-label="Principal">
+        <div class="nav-left">
+          <a href="index.html" class="logo" aria-label="Dominant System inicio">
+            <span class="logo-mark">DS</span>
+            <span class="logo-word">Dominant System</span>
+          </a>
+          <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="index.html#servicios">Servicios</a>
+            <a href="index.html#proyectos">Proyectos</a>
+            <a href="precios.html">Precios</a>
+            <div class="nav-dropdown" data-dropdown>
+              <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Legal<svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="nav-dropdown-menu" role="menu">
+                <a href="privacidad.html" role="menuitem">Política de Privacidad</a>
+                <a href="cookies.html" role="menuitem">Política de Cookies</a>
+                <a href="terminos.html" role="menuitem">Términos y Condiciones</a>
+                <a href="aviso-legal.html" role="menuitem">Aviso Legal</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-right">
+          <span class="nav-status">Disponible para proyectos 2026</span>
+          <span class="nav-clock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-clock>—</span></span>
+          <a href="index.html#contacto" class="btn btn-dark">
+            <span class="btn-roll"><span>Pedir presupuesto</span><span>Pedir presupuesto</span></span>
+            <span class="btn-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+        <button class="nav-toggle" data-menu-open aria-label="Abrir menú">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ============ MOBILE MENU ============ -->
+  <div class="mobile-menu" aria-hidden="true">
+    <div class="mobile-backdrop" data-menu-close></div>
+    <div class="mobile-sheet">
+      <div style="display:flex; align-items:center; justify-content:space-between;">
+        <span class="mobile-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-clock>—</span></span>
+        <button class="nav-toggle" data-menu-close aria-label="Cerrar menú">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#servicios">Servicios</a>
+        <a href="index.html#proyectos">Proyectos</a>
+        <a href="index.html#nosotros">Nosotros</a>
+        <a href="precios.html">Precios</a>
+        <div class="mobile-legal" data-mobile-legal>
+          <button type="button" class="mobile-legal-trigger" aria-expanded="false">Legal<svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="mobile-legal-menu"><div>
+            <a href="privacidad.html">Política de Privacidad</a>
+            <a href="cookies.html">Política de Cookies</a>
+            <a href="terminos.html">Términos y Condiciones</a>
+            <a href="aviso-legal.html">Aviso Legal</a>
+          </div></div>
+        </div>
+      </div>
+      <a href="index.html#contacto" class="btn btn-orange btn-block" data-menu-close>
+        <span class="btn-roll"><span>Empezar un proyecto</span><span>Empezar un proyecto</span></span>
+        <span class="btn-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero" data-hero>
+    <div class="hero-mesh"></div>
+    <div class="hero-grain"></div>
+    <div class="hero-inner container">
+      <div class="hero-spacer"></div>
+      <div class="hero-grid">
+        <div class="hero-content">
+          <p class="hero-kicker reveal">Diseño web para negocios locales en la Sierra</p>
+          <h1 class="h1 reveal">Webs profesionales para la Sierra de Madrid. Tu negocio, en internet como merece.</h1>
+          <p class="hero-sub lead reveal">Creamos páginas web rápidas, modernas y optimizadas para Google, pensadas para negocios de la Sierra de Madrid. Más visitas, más contactos y más clientes sin complicarte.</p>
+          <div class="hero-ctas reveal">
+            <a href="#contacto" class="btn btn-orange">
+              <span class="btn-roll"><span>Quiero una web que venda</span><span>Quiero una web que venda</span></span>
+              <span class="btn-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </a>
+            <a href="#proceso" class="btn btn-ghost">Ver cómo trabajamos</a>
+          </div>
+          <div class="hero-metrics reveal">
+            <div class="metric">
+              <div class="metric-num"><span class="accent">+80%</span></div>
+              <div class="metric-label">más contactos desde la web</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">100%</div>
+              <div class="metric-label">adaptadas a móvil</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">7 días</div>
+              <div class="metric-label">plazo orientativo</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-panel reveal" style="--reveal-delay:0.15s">
+          <div class="panel-head">
+            <span class="panel-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11 21h-1l1-7H6.5c-.88 0-.33-.75-.31-.78C7.48 10.94 9.42 7.54 12.07 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C13.96 14.39 11 21 11 21z"/></svg></span>
+            <div class="panel-head-text">
+              <strong>Proyectos web en la Sierra</strong>
+              <span>Panel de resultados en tiempo real</span>
+            </div>
+            <span class="panel-flag">+30 webs locales activas</span>
+          </div>
+          <div class="panel-stats">
+            <div class="panel-stat">
+              <span class="panel-stat-label">Visitas mensuales promedio</span>
+              <span class="panel-stat-num">+3.500</span>
+            </div>
+            <div class="panel-stat">
+              <span class="panel-stat-label">Solicitudes desde la web</span>
+              <span class="panel-stat-num">+120/mes</span>
+            </div>
+          </div>
+          <div class="panel-testi">
+            <div class="testi-row">
+              <span class="testi-avatar">A</span>
+              <div class="testi-id">
+                <strong>Ana · Clínica en Villalba</strong>
+                <span>Web corporativa · <span class="stars">5★</span></span>
+              </div>
+              <span class="testi-badge ok">Web publicada</span>
+            </div>
+            <p>"Desde que lanzamos la nueva web recibimos muchas más solicitudes desde el formulario de contacto."</p>
+          </div>
+          <div class="panel-testi">
+            <div class="testi-row">
+              <span class="testi-avatar">M</span>
+              <div class="testi-id">
+                <strong>Miguel · Restaurante en Guadarrama</strong>
+                <span>Carta online + reservas · <span class="stars">5★</span></span>
+              </div>
+              <span class="testi-badge warn">En mejora continua</span>
+            </div>
+            <p>"La web va rapidísima en el móvil y muchos clientes reservan directamente desde ahí."</p>
+          </div>
+          <a href="#proyectos" class="panel-btn">Ver ejemplos de webs</a>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-group">
+        <span class="marquee-item">Alpedrete</span>
+        <span class="marquee-item">Collado Villalba</span>
+        <span class="marquee-item">Guadarrama</span>
+        <span class="marquee-item">Moralzarzal</span>
+        <span class="marquee-item">Becerril de la Sierra</span>
+        <span class="marquee-item">Cercedilla</span>
+        <span class="marquee-item">Navacerrada</span>
+        <span class="marquee-item">El Boalo</span>
+        <span class="marquee-item">Manzanares el Real</span>
+        <span class="marquee-item">Galapagar</span>
+      </div>
+      <div class="marquee-group" aria-hidden="true">
+        <span class="marquee-item">Alpedrete</span>
+        <span class="marquee-item">Collado Villalba</span>
+        <span class="marquee-item">Guadarrama</span>
+        <span class="marquee-item">Moralzarzal</span>
+        <span class="marquee-item">Becerril de la Sierra</span>
+        <span class="marquee-item">Cercedilla</span>
+        <span class="marquee-item">Navacerrada</span>
+        <span class="marquee-item">El Boalo</span>
+        <span class="marquee-item">Manzanares el Real</span>
+        <span class="marquee-item">Galapagar</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ BENEFITS ============ -->
+  <section class="section section-white pad" id="beneficios">
+    <div class="container">
+      <div class="section-head">
+        <div class="badge-row reveal">
+          <span class="badge-num">1</span>
+          <span class="badge-pill">Por qué Dominant System</span>
+        </div>
+        <h2 class="h2 reveal">Todo lo que tu web necesita para generar clientes</h2>
+      </div>
+      <div class="grid-2" data-stagger>
+        <article class="card card-hover benefit reveal">
+          <span class="benefit-bar"></span>
+          <div class="benefit-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></div>
+          <h3>Diseño profesional que transmite confianza</h3>
+          <p>Una imagen cuidada y coherente que posiciona tu negocio a la altura de las grandes marcas y convierte visitas en clientes.</p>
+        </article>
+        <article class="card card-hover benefit reveal">
+          <span class="benefit-bar"></span>
+          <div class="benefit-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+          <h3>SEO local para aparecer en Google</h3>
+          <p>Optimizamos tu web para que tus clientes de la Sierra te encuentren cuando buscan tu servicio en tu zona.</p>
+        </article>
+        <article class="card card-hover benefit reveal">
+          <span class="benefit-bar"></span>
+          <div class="benefit-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <h3>Conexión con WhatsApp, redes y reservas</h3>
+          <p>Integramos los canales que ya usas para que contactar contigo o reservar sea inmediato, sin fricción.</p>
+        </article>
+        <article class="card card-hover benefit reveal">
+          <span class="benefit-bar"></span>
+          <div class="benefit-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3>Velocidad, seguridad y mantenimiento</h3>
+          <p>Webs rápidas, seguras y siempre actualizadas. Nos encargamos del soporte técnico para que tú solo te ocupes de tu negocio.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="section section-soft pad" id="proceso">
+    <div class="container">
+      <div class="section-head">
+        <div class="badge-row reveal">
+          <span class="badge-num">2</span>
+          <span class="badge-pill">Cómo trabajamos</span>
+        </div>
+        <h2 class="h2 reveal">Así diseñamos y lanzamos tu nueva web</h2>
+      </div>
+      <div class="process-wrap">
+        <div class="progress-line" data-progress-line></div>
+        <div class="process-grid" data-stagger>
+          <article class="card step reveal">
+            <div class="step-num">01</div>
+            <h3>Análisis de tu negocio</h3>
+            <p>Estudiamos tu actividad, tu competencia y tus objetivos para definir una estrategia clara antes de diseñar.</p>
+          </article>
+          <article class="card step reveal">
+            <div class="step-num">02</div>
+            <h3>Propuesta de diseño</h3>
+            <p>Creamos una propuesta visual a medida de tu marca y la revisamos contigo hasta dar con el resultado perfecto.</p>
+          </article>
+          <article class="card step reveal">
+            <div class="step-num">03</div>
+            <h3>Desarrollo y optimización</h3>
+            <p>Programamos tu web rápida y segura, optimizada para Google y para convertir visitas en clientes.</p>
+          </article>
+          <article class="card step reveal">
+            <div class="step-num">04</div>
+            <h3>Lanzamiento y soporte</h3>
+            <p>Publicamos tu web y te acompañamos después con mantenimiento, mejoras y soporte continuo.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="section section-white pad" id="servicios">
+    <div class="container">
+      <div class="section-head">
+        <div class="badge-row reveal">
+          <span class="badge-num">3</span>
+          <span class="badge-pill">Servicios</span>
+        </div>
+        <h2 class="h2 reveal">Servicios web que se adaptan a tu negocio</h2>
+      </div>
+      <div class="grid-2" data-stagger>
+        <article class="card card-hover service reveal">
+          <div class="service-top"><h3>Web corporativa para negocios locales</h3></div>
+          <p>La presencia digital esencial para tu negocio: secciones de servicios, sobre ti, contacto y todo lo que necesitas para generar confianza.</p>
+          <a href="#contacto" class="service-cta">Quiero una web corporativa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+        <article class="card card-hover service reveal">
+          <div class="service-top"><h3>Landing page para campañas</h3></div>
+          <p>Páginas enfocadas a un único objetivo, diseñadas para convertir el tráfico de tus campañas en contactos y ventas.</p>
+          <a href="#contacto" class="service-cta">Quiero una landing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+        <article class="card card-hover service reveal">
+          <div class="service-top"><h3>Tiendas online y reservas</h3><span class="service-extra">Servicio extra</span></div>
+          <p>Vende productos o gestiona reservas directamente desde tu web, con una experiencia sencilla para ti y para tus clientes.</p>
+          <a href="#contacto" class="service-cta">Información e-commerce <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+        <article class="card card-hover service reveal">
+          <div class="service-top"><h3>Mantenimiento y mejoras continuas</h3><span class="service-extra">Servicio extra</span></div>
+          <p>Mantenemos tu web actualizada, segura y en evolución constante para que siga rindiendo mes a mes.</p>
+          <a href="#contacto" class="service-cta">Quiero mantenimiento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY US ============ -->
+  <section class="section section-soft pad" id="nosotros">
+    <div class="container">
+      <div class="whyus-grid">
+        <div class="whyus-intro">
+          <p class="eyebrow reveal">Negocios de la Sierra que ya confían en nosotros</p>
+          <h2 class="h2 reveal">¿Por qué crear tu web con Dominant System?</h2>
+          <p class="reveal">No hacemos webs bonitas que no sirven para nada. Diseñamos herramientas de negocio pensadas para conseguir resultados reales: más visibilidad, más contactos y más clientes para tu negocio en la Sierra.</p>
+        </div>
+        <div class="acc" data-accordion>
+          <details open>
+            <summary>Webs orientadas a resultados, no solo diseño <span class="acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+            <div class="acc-body"><p>Cada decisión de diseño parte de un objetivo de negocio. Estructuramos la web para guiar al visitante hacia la acción que te interesa: llamar, reservar o comprar.</p></div>
+          </details>
+          <details>
+            <summary>Acompañamiento completo, de principio a fin <span class="acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+            <div class="acc-body"><p>Desde la primera reunión hasta mucho después del lanzamiento, estamos a tu lado. Te explicamos cada paso sin tecnicismos y resolvemos tus dudas con rapidez.</p></div>
+          </details>
+          <details>
+            <summary>Especialistas en negocios locales de la Sierra <span class="acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+            <div class="acc-body"><p>Conocemos el contexto de Alpedrete, Collado Villalba, Guadarrama o Moralzarzal. Sabemos cómo busca y qué valora tu cliente local, y lo aplicamos a tu web.</p></div>
+          </details>
+          <details>
+            <summary>Base preparada para campañas y crecimiento <span class="acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+            <div class="acc-body"><p>Tu web queda lista para crecer contigo: añadir landing pages, lanzar campañas o ampliar servicios sin tener que empezar de cero.</p></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROYECTOS / PORTFOLIO ============ -->
+  <section class="section section-white pad" id="proyectos">
+    <div class="container">
+      <div class="section-head">
+        <div class="badge-row reveal">
+          <span class="badge-pill">Proyectos</span>
+        </div>
+        <h2 class="h2 reveal">Trabajos que ya están dando resultados</h2>
+        <p class="lead reveal" style="max-width:46ch; margin-top:18px;">Algunos de los proyectos en los que estamos trabajando.</p>
+      </div>
+      <div class="grid-3" data-stagger>
+        <article class="card card-hover work reveal">
+          <img src="assets/proyectos/proyecto-1.png" alt="Clínica Dental Guadarrama" class="work-img" style="width:100%; height:auto; aspect-ratio:16/10; object-fit:cover; display:block; background:var(--surface);">
+          <div class="resource-body">
+            <span class="tag">Clínica dental</span>
+            <h3>Clínica Dental Guadarrama</h3>
+            <p>Web con reserva de cita online y SEO local. Más solicitudes de primera visita desde el móvil.</p>
+            <a href="#" class="read-more">Ver proyecto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+        <article class="card card-hover work reveal">
+          <img src="assets/proyectos/proyecto-2.png" alt="Asador El Mirador · Moralzarzal" class="work-img" style="width:100%; height:auto; aspect-ratio:16/10; object-fit:cover; display:block; background:var(--surface);">
+          <div class="resource-body">
+            <span class="tag">Restaurante</span>
+            <h3>Asador El Mirador · Moralzarzal</h3>
+            <p>Carta digital, reservas y galería. Una web rápida que convierte las búsquedas en mesas reservadas.</p>
+            <a href="#" class="read-more">Ver proyecto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+        <article class="card card-hover work reveal">
+          <img src="assets/proyectos/proyecto-3.png" alt="Estudio Pilates Collado Villalba" class="work-img" style="width:100%; height:auto; aspect-ratio:16/10; object-fit:cover; display:block; background:var(--surface);">
+          <div class="resource-body">
+            <span class="tag">Estudio &amp; bienestar</span>
+            <h3>Estudio Pilates Collado Villalba</h3>
+            <p>Landing de captación con formularios y WhatsApp. Diseño cuidado que transmite confianza desde el primer scroll.</p>
+            <a href="#" class="read-more">Ver proyecto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section contact pad" id="contacto">
+    <div class="contact-glow"></div>
+    <div class="container">
+      <div class="contact-grid">
+        <form class="form-card reveal" data-contact-form action="https://formspree.io/f/xjgdoebw" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="Nueva solicitud de propuesta - Dominant System" />
+          <div class="form-status" data-form-status role="alert" aria-live="assertive"></div>
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="name" required />
+            <span class="error" data-error-for="nombre"></span>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="tucorreo@email.com" autocomplete="email" required />
+              <span class="error" data-error-for="email"></span>
+            </div>
+            <div class="field">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="612 345 678" inputmode="tel" autocomplete="tel" maxlength="20" required />
+              <span class="error" data-error-for="telefono"></span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="negocio">Nombre del negocio</label>
+            <input type="text" id="negocio" name="negocio" placeholder="Tu negocio" autocomplete="organization" required />
+            <span class="error" data-error-for="negocio"></span>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="tipo">Tipo de web</label>
+              <select id="tipo" name="tipo" required>
+                <option value="" disabled selected>Elige una opción…</option>
+                <option value="corporativa">Web corporativa</option>
+                <option value="landing">Landing page</option>
+                <option value="tienda">Tienda online</option>
+                <option value="renovacion">Renovación de web</option>
+              </select>
+              <span class="error" data-error-for="tipo"></span>
+            </div>
+            <div class="field">
+              <label for="localidad">Localidad</label>
+              <input type="text" id="localidad" name="localidad" placeholder="Ej. Collado Villalba" autocomplete="address-level2" required />
+              <span class="error" data-error-for="localidad"></span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="plazo">Plazo deseado</label>
+            <select id="plazo" name="plazo" required>
+              <option value="" disabled selected>Elige un plazo…</option>
+              <option value="lo-antes-posible">Lo antes posible</option>
+              <option value="1-mes">En torno a 1 mes</option>
+              <option value="2-3-meses">2–3 meses</option>
+              <option value="solo-informacion">Solo quiero información</option>
+            </select>
+            <span class="error" data-error-for="plazo"></span>
+          </div>
+          <div class="consent">
+            <input type="checkbox" id="consent" name="consent" required />
+            <label for="consent">He leído y acepto la <a href="privacidad.html">Política de Privacidad</a> y el tratamiento de mis datos para recibir una propuesta.</label>
+            <span class="error" data-error-for="consent"></span>
+          </div>
+          <button type="submit" class="btn btn-orange btn-block">
+            <span class="btn-roll"><span>Enviar y recibir propuesta</span><span>Enviar y recibir propuesta</span></span>
+            <span class="btn-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </button>
+        </form>
+        <div class="contact-copy reveal">
+          <h2 class="h2">Tu negocio en la Sierra merece una web a la altura</h2>
+          <p>Cuéntanos qué necesitas y te enviaremos una propuesta personalizada, sin compromiso. Te explicamos qué incluye, cuánto cuesta y en qué plazo lo tendrías listo.</p>
+          <p>Trabajamos con negocios de Alpedrete, Collado Villalba, Guadarrama, Moralzarzal y toda la Sierra de Madrid.</p>
+          <div class="contact-points">
+            <div class="contact-point">
+              <span class="contact-point-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 4 16 0M4 4l8 7 8-7M4 4v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4"/></svg></span>
+              <div><strong>proyectos@dominant.es</strong><span>Respuesta en menos de 24 h laborables</span></div>
+            </div>
+            <div class="contact-point">
+              <span class="contact-point-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <div><strong>Sierra de Madrid</strong><span>Trabajo presencial y en remoto</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><span class="logo-mark">DS</span><span class="logo-word">Dominant System</span></a>
+          <p class="footer-tagline">Webs profesionales para la Sierra de Madrid — tu negocio en internet como merece.</p>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/yeray-sánchez-roldán-9920022b9/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM0 8h5v16H0V8zm7.5 0h4.78v2.2h.07c.67-1.2 2.3-2.46 4.73-2.46C22.4 7.74 24 10.1 24 14.6V24h-5v-8.3c0-2-.04-4.55-2.77-4.55-2.77 0-3.2 2.16-3.2 4.4V24h-5V8z"/></svg></a>
+            <a href="https://www.youtube.com/@YeraysanchezDev" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.5 15.5v-7l6.3 3.5-6.3 3.5z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="index.html#servicios">Web corporativa</a></li>
+            <li><a href="index.html#servicios">Landing pages</a></li>
+            <li><a href="index.html#servicios">Tiendas y reservas</a></li>
+            <li><a href="index.html#servicios">Mantenimiento</a></li>
+            <li><a href="precios.html">Planes y precios</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Zonas</h4>
+          <ul>
+            <li><a href="index.html#contacto">Alpedrete</a></li>
+            <li><a href="index.html#contacto">Collado Villalba</a></li>
+            <li><a href="index.html#contacto">Guadarrama</a></li>
+            <li><a href="index.html#contacto">Moralzarzal</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Estudio</h4>
+          <ul>
+            <li><a href="index.html#proyectos">Proyectos</a></li>
+            <li><a href="index.html#nosotros">Por qué nosotros</a></li>
+            <li><a href="index.html#contacto">Pedir presupuesto</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Dominant System. Páginas web profesionales para negocios de la Sierra de Madrid.</span>
+        <div class="footer-legal">
+          <a href="aviso-legal.html">Información Legal</a>
+          <a href="terminos.html">Términos y Condiciones</a>
+          <a href="privacidad.html">Política de Privacidad</a>
+          <a href="cookies.html">Política de Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "LocalBusiness"],
+    "@id": "https://dominant.es/#organization",
+    "name": "Dominant System",
+    "url": "https://dominant.es",
+    "email": "proyectos@dominant.es",
+    "description": "Diseño y desarrollo de páginas web profesionales para negocios locales de la Sierra de Madrid.",
+    "areaServed": [
+      {"@type": "City", "name": "Alpedrete"},
+      {"@type": "City", "name": "Collado Villalba"},
+      {"@type": "City", "name": "Guadarrama"},
+      {"@type": "City", "name": "Moralzarzal"},
+      {"@type": "City", "name": "Becerril de la Sierra"},
+      {"@type": "City", "name": "Cercedilla"},
+      {"@type": "City", "name": "Navacerrada"},
+      {"@type": "City", "name": "El Boalo"},
+      {"@type": "City", "name": "Manzanares el Real"},
+      {"@type": "City", "name": "Galapagar"}
+    ],
+    "knowsAbout": ["Diseño web", "Desarrollo web", "SEO local", "Tiendas online", "Landing pages"],
+    "sameAs": [
+      "https://www.linkedin.com/in/yeray-sánchez-roldán-9920022b9/",
+      "https://www.youtube.com/@YeraysanchezDev"
+    ]
+  }
+  </script>
+</body>
+</html>

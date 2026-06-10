@@ -1,0 +1,10 @@
+# Archivos de desarrollo
+uploads/
+screenshots/
+.thumbnail
+image-slot.js
+*.ps1
+assets/_gen_og.py
+
+# Claude Code (settings locales)
+.claude/

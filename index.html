@@ -395,8 +395,9 @@
     <div class="contact-glow"></div>
     <div class="container">
       <div class="contact-grid">
-        <form class="form-card reveal" data-contact-form action="https://formspree.io/f/xjgdoebw" method="POST" novalidate>
-          <input type="hidden" name="_subject" value="Nueva solicitud de propuesta - Dominant System" />
+        <form class="form-card reveal" data-contact-form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="contacto" />
+          <p hidden><label>No rellenar: <input name="bot-field" /></label></p>
           <div class="form-status" data-form-status role="alert" aria-live="assertive"></div>
           <div class="field">
             <label for="nombre">Nombre</label>

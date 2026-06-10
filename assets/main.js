@@ -335,9 +335,8 @@
         return;
       }
 
-      // all valid → send to Formspree via fetch (no page reload, no mail client)
+      // all valid → enviar a Netlify Forms (POST a "/" con x-www-form-urlencoded)
       var submitBtn = form.querySelector('[type="submit"], button:not([type])');
-      var endpoint = form.getAttribute('action');
       setStatus('ok', 'Enviando tu solicitud…');
       if (submitBtn) { submitBtn.disabled = true; submitBtn.style.opacity = '0.7'; submitBtn.style.pointerEvents = 'none'; }
 
@@ -345,10 +344,20 @@
         if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = ''; submitBtn.style.pointerEvents = ''; }
       }
 
-      fetch(endpoint, {
+      var payload = new URLSearchParams();
+      Array.prototype.forEach.call(form.elements, function (el) {
+        if (!el.name || el.disabled) return;
+        if (el.type === 'checkbox') {
+          if (el.checked) payload.append(el.name, el.value || 'on');
+        } else if (el.type !== 'submit' && el.type !== 'button') {
+          payload.append(el.name, el.value);
+        }
+      });
+
+      fetch('/', {
         method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: payload.toString()
       }).then(function (res) {
         if (res.ok) {
           form.reset();
@@ -356,16 +365,8 @@
           setStatus('ok', '¡Gracias! Te responderé en menos de 24h.');
           reEnable();
         } else {
-          return res.json().then(function (data) {
-            var msg = (data && data.errors && data.errors.length)
-              ? data.errors.map(function (er) { return er.message; }).join(' ')
-              : 'No se pudo enviar el formulario. Inténtalo de nuevo o escríbenos a proyectos@dominant.es.';
-            setStatus('err', msg);
-            reEnable();
-          }).catch(function () {
-            setStatus('err', 'No se pudo enviar el formulario. Inténtalo de nuevo o escríbenos a proyectos@dominant.es.');
-            reEnable();
-          });
+          setStatus('err', 'No se pudo enviar el formulario. Inténtalo de nuevo o escríbenos a proyectos@dominant.es.');
+          reEnable();
         }
       }).catch(function () {
         setStatus('err', 'Error de conexión. Revisa tu internet e inténtalo de nuevo.');

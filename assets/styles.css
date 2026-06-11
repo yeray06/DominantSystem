@@ -588,9 +588,11 @@ h1, h2, h3 { font-weight: 500; letter-spacing: -0.03em; line-height: 1.08; }
    BENEFITS GRID
    ============================================================ */
 .grid-2 {
-  display: grid; grid-template-columns: 1fr; gap: 18px;
+  /* escritorio: una sola fila (4 tarjetas: beneficios y servicios) */
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px;
 }
-@media (min-width: 768px) { .grid-2 { grid-template-columns: 1fr 1fr; gap: 22px; } }
+/* móvil: 2x2 */
+@media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr 1fr; gap: 14px; } }
 
 .benefit {
   padding: 34px 30px 32px;
@@ -716,11 +718,6 @@ h1, h2, h3 { font-weight: 500; letter-spacing: -0.03em; line-height: 1.08; }
 }
 @media (min-width: 640px) { .grid-3 { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 1024px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
-.grid-2 {
-  display: grid; grid-template-columns: 1fr; gap: 22px;
-  max-width: 780px; margin-inline: auto;
-}
-@media (min-width: 720px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
 .resource { overflow: hidden; display: flex; flex-direction: column; }
 .resource-img {
   aspect-ratio: 16/10; position: relative; overflow: hidden;

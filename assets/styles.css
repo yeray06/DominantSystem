@@ -31,7 +31,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
 
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -1275,4 +1275,53 @@ h1, h2, h3 { font-weight: 500; letter-spacing: -0.03em; line-height: 1.08; }
   .step h3 { font-size: 14px; }
   .step p { font-size: 12px; }
   .step-num { width: 36px; height: 36px; font-size: 14px; margin-bottom: 12px; }
+}
+
+/* ============================================================
+   RESPONSIVE — PÁGINAS INTERNAS Y ELEMENTOS COMPARTIDOS
+   (precios, legales, footer, áreas táctiles)
+   ============================================================ */
+
+/* Tabla scrollable: nunca genera scroll horizontal de página.
+   Se aplica también en escritorio sin efecto visible (no desborda). */
+.table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+@media (max-width: 768px) {
+  /* ----- Cabecera de páginas internas (legales + precios) ----- */
+  .page-hero {
+    padding-top: calc(var(--nav-h) + 28px);
+    padding-bottom: 24px;
+  }
+
+  /* ----- Áreas táctiles mínimas de 44px en móvil ----- */
+  .btn { min-height: 44px; }
+
+  /* ----- PRECIOS: tarjetas de plan más compactas ----- */
+  .tier { padding: 24px 22px 26px; }
+  .tier-price { margin: 18px 0 6px; }
+  .tier-note { margin-bottom: 22px; }
+  .tier ul.feats { gap: 12px; margin-bottom: 24px; }
+  .tier-divider { margin: 0 0 20px; }
+
+  /* ----- PÁGINAS LEGALES: contenido más compacto ----- */
+  .legal-meta { padding: 18px; margin: 20px 0; }
+  .legal-meta div { font-size: 14px; }
+  .legal-body h2 { font-size: clamp(1.2rem, 5vw, 1.5rem); margin: 30px 0 12px; }
+  .legal-body h3 { font-size: 1.05rem; }
+  .legal-body p,
+  .legal-body ul.bullets li { font-size: 15px; }
+  .legal-table { font-size: 13px; }
+  .legal-table th, .legal-table td { padding: 10px 11px; }
+
+  /* ----- FOOTER: enlaces con área táctil cómoda ----- */
+  .footer { padding: 48px 0 28px; }
+  .footer-col ul { gap: 4px; }
+  .footer-col a {
+    display: inline-block;
+    padding: 9px 0;
+    min-height: 22px;
+  }
+  .footer-legal { gap: 10px 18px; }
+  .footer-legal a { display: inline-block; padding: 8px 0; }
+  .footer-social a { width: 44px; height: 44px; }
 }

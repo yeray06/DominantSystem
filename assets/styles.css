@@ -758,6 +758,10 @@ h1, h2, h3 { font-weight: 500; letter-spacing: -0.03em; line-height: 1.08; }
 .work .read-more svg { transition: transform 0.4s var(--ease); }
 .work:hover .read-more svg { transform: translateX(4px); }
 .work:hover .read-more { color: var(--blue-2); }
+/* CTA card: la tarjeta entera es un enlace a #contacto */
+.work-cta { text-decoration: none; color: inherit; }
+.work-cta h3 { color: var(--ink); }
+.work-cta .read-more { color: var(--blue-2); font-weight: 600; }
 
 /* ============================================================
    CONTACT

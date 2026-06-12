@@ -12,7 +12,7 @@
   --white: #ffffff;
   --ink: #0f172a;         /* primary text (very dark blue, not pure black) */
   --ink-60: #64748b;      /* secondary blue-gray text */
-  --ink-40: #94a3b8;      /* tertiary text / faint labels */
+  --ink-40: #656e7d;      /* tertiary text / faint labels (AA sobre blanco y surface) */
   --accent: #2563eb;      /* strong blue — buttons, links, icons, accents */
   --accent-2: #1d4ed8;    /* darker blue for hover */
   --blue: #2563eb;
@@ -47,6 +47,19 @@ img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; }
 ul { list-style: none; }
+
+/* Accesibilidad: foco visible para navegación por teclado.
+   Solo se muestra con :focus-visible (teclado), no en clic de ratón. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+a:focus-visible, button:focus-visible, summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
 
 .container {
   width: 100%;

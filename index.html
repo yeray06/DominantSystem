@@ -36,6 +36,7 @@
             <a href="index.html#servicios">Servicios</a>
             <a href="index.html#proyectos">Proyectos</a>
             <a href="precios.html">Precios</a>
+            <a href="index.html#reservar">Reservar llamada</a>
             <div class="nav-dropdown" data-dropdown>
               <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Legal<svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
               <div class="nav-dropdown-menu" role="menu">
@@ -78,6 +79,7 @@
         <a href="index.html#proyectos">Proyectos</a>
         <a href="index.html#nosotros">Nosotros</a>
         <a href="precios.html">Precios</a>
+        <a href="index.html#reservar">Reservar llamada</a>
         <div class="mobile-legal" data-mobile-legal>
           <button type="button" class="mobile-legal-trigger" aria-expanded="false">Legal<svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
           <div class="mobile-legal-menu"><div>
@@ -112,6 +114,10 @@
               <span class="btn-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
             </a>
             <a href="#proceso" class="btn btn-ghost">Ver cómo trabajamos</a>
+            <a href="#reservar" class="btn btn-ghost btn-ghost-cal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+              Agendar videollamada
+            </a>
           </div>
           <div class="hero-metrics reveal">
             <div class="metric">
@@ -464,6 +470,11 @@
             <span class="btn-roll"><span>Enviar y recibir propuesta</span><span>Enviar y recibir propuesta</span></span>
             <span class="btn-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </button>
+          <div class="form-or"><span>o</span></div>
+          <a href="#reservar" class="btn-alt-cal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            <span>Reserva una videollamada</span>
+          </a>
         </form>
         <div class="contact-copy reveal">
           <h2 class="h2">Tu negocio en la Sierra merece una web a la altura</h2>
@@ -483,6 +494,85 @@
       </div>
     </div>
   </section>
+
+  <!-- ============ RESERVAR (Cal.com) ============ -->
+  <section class="section section-soft pad" id="reservar">
+    <div class="container">
+      <div class="section-head reserva-head">
+        <p class="eyebrow reveal">Agenda una llamada</p>
+        <h2 class="h2 reveal">¿Hablamos de tu proyecto?</h2>
+        <p class="lead reveal" style="max-width:54ch; margin-top:18px;">Reserva una videollamada gratuita de 30 minutos. Cuéntame qué necesitas y te explico cómo puedo ayudarte, sin compromiso.</p>
+      </div>
+
+      <div class="reserva-card reveal">
+        <p class="reserva-hint">Elige el formato que prefieras: una <strong>llamada rápida de 15 minutos</strong> para una primera toma de contacto, o una <strong>videollamada completa de 30 minutos</strong> para revisar tu proyecto con calma.</p>
+
+        <div class="reserva-tabs" role="tablist" aria-label="Duración de la llamada">
+          <button type="button" class="reserva-tab is-active" role="tab" aria-selected="true" data-cal-tab="30min">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            <span class="reserva-tab-label">Videollamada completa</span>
+            <span class="reserva-tab-time">30 min</span>
+          </button>
+          <button type="button" class="reserva-tab" role="tab" aria-selected="false" data-cal-tab="15min">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+            <span class="reserva-tab-label">Llamada rápida</span>
+            <span class="reserva-tab-time">15 min</span>
+          </button>
+        </div>
+
+        <div class="reserva-embeds">
+          <div class="reserva-embed is-active" data-cal-panel="30min">
+            <div class="cal-inline" id="cal-inline-30min"></div>
+          </div>
+          <div class="reserva-embed" data-cal-panel="15min">
+            <div class="cal-inline" id="cal-inline-15min"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cal.com inline embed -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+
+    // Videollamada completa — 30 min
+    Cal("init", "30min", {origin:"https://cal.com"});
+    Cal.ns["30min"]("inline", {
+      elementOrSelector:"#cal-inline-30min",
+      config: {"layout":"month_view","theme":"light"},
+      calLink: "dominant/30min",
+    });
+    Cal.ns["30min"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#2563eb"}},"hideEventTypeDetails":false,"layout":"month_view"});
+
+    // Llamada rápida — 15 min
+    Cal("init", "15min", {origin:"https://cal.com"});
+    Cal.ns["15min"]("inline", {
+      elementOrSelector:"#cal-inline-15min",
+      config: {"layout":"month_view","theme":"light"},
+      calLink: "dominant/15min",
+    });
+    Cal.ns["15min"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#2563eb"}},"hideEventTypeDetails":false,"layout":"month_view"});
+
+    // Tabs: alternar entre los dos calendarios
+    (function () {
+      var tabs = document.querySelectorAll('.reserva-tab');
+      var panels = document.querySelectorAll('.reserva-embed');
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          var key = tab.getAttribute('data-cal-tab');
+          tabs.forEach(function (t) {
+            var active = t === tab;
+            t.classList.toggle('is-active', active);
+            t.setAttribute('aria-selected', active ? 'true' : 'false');
+          });
+          panels.forEach(function (p) {
+            p.classList.toggle('is-active', p.getAttribute('data-cal-panel') === key);
+          });
+        });
+      });
+    })();
+  </script>
 
   <!-- ============ FOOTER ============ -->
   <footer class="footer">

@@ -522,37 +522,45 @@
 
         <div class="reserva-embeds">
           <div class="reserva-embed is-active" data-cal-panel="30min">
-            <div class="cal-inline" id="cal-inline-30min"></div>
+            <div class="cal-inline" id="cal-inline-30min" data-cal-link="dominant/30min"></div>
           </div>
           <div class="reserva-embed" data-cal-panel="15min">
-            <div class="cal-inline" id="cal-inline-15min"></div>
+            <div class="cal-inline" id="cal-inline-15min" data-cal-link="dominant/15min"></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Cal.com inline embed -->
+  <!-- Cal.com inline embed (carga condicionada al consentimiento de cookies) -->
   <script type="text/javascript">
+    // Bootstrap de Cal: solo DEFINE la cola; no descarga nada hasta llamar a Cal("init", ...).
     (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
 
-    // Videollamada completa — 30 min
-    Cal("init", "30min", {origin:"https://cal.com"});
-    Cal.ns["30min"]("inline", {
-      elementOrSelector:"#cal-inline-30min",
-      config: {"layout":"month_view","theme":"light"},
-      calLink: "dominant/30min",
-    });
-    Cal.ns["30min"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#2563eb"}},"hideEventTypeDetails":false,"layout":"month_view"});
+    // Carga real de los embeds. La invoca assets/cookies.js SOLO tras el consentimiento.
+    window.loadCalEmbeds = function () {
+      if (window.__calLoaded) return;
+      window.__calLoaded = true;
+      document.querySelectorAll('.cal-inline').forEach(function (n) { n.setAttribute('data-cal-loaded', '1'); });
 
-    // Llamada rápida — 15 min
-    Cal("init", "15min", {origin:"https://cal.com"});
-    Cal.ns["15min"]("inline", {
-      elementOrSelector:"#cal-inline-15min",
-      config: {"layout":"month_view","theme":"light"},
-      calLink: "dominant/15min",
-    });
-    Cal.ns["15min"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#2563eb"}},"hideEventTypeDetails":false,"layout":"month_view"});
+      // Videollamada completa — 30 min
+      Cal("init", "30min", {origin:"https://cal.com"});
+      Cal.ns["30min"]("inline", {
+        elementOrSelector:"#cal-inline-30min",
+        config: {"layout":"month_view","theme":"light"},
+        calLink: "dominant/30min",
+      });
+      Cal.ns["30min"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#2563eb"}},"hideEventTypeDetails":false,"layout":"month_view"});
+
+      // Llamada rápida — 15 min
+      Cal("init", "15min", {origin:"https://cal.com"});
+      Cal.ns["15min"]("inline", {
+        elementOrSelector:"#cal-inline-15min",
+        config: {"layout":"month_view","theme":"light"},
+        calLink: "dominant/15min",
+      });
+      Cal.ns["15min"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#2563eb"}},"hideEventTypeDetails":false,"layout":"month_view"});
+    };
 
     // Tabs: alternar entre los dos calendarios
     (function () {
@@ -621,12 +629,14 @@
           <a href="terminos.html">Términos y Condiciones</a>
           <a href="privacidad.html">Política de Privacidad</a>
           <a href="cookies.html">Política de Cookies</a>
+          <a href="#" data-cookie-settings>Configurar cookies</a>
         </div>
       </div>
     </div>
   </footer>
 
   <script src="assets/main.js"></script>
+  <script src="assets/cookies.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",

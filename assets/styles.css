@@ -1424,3 +1424,105 @@ h1, h2, h3 { font-weight: 500; letter-spacing: -0.03em; line-height: 1.08; }
   .reserva-tab-label { white-space: normal; }
   .cal-inline { min-height: 540px; }
 }
+
+/* ============================================================
+   COOKIES — banner de consentimiento + placeholder de Cal.com
+   ============================================================ */
+.cookie-banner {
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  z-index: 1200;
+  width: min(680px, calc(100vw - 32px));
+  transform: translate(-50%, 24px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .45s var(--ease), transform .45s var(--ease-sheet);
+}
+.cookie-banner.is-visible {
+  transform: translate(-50%, 0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.cookie-banner-inner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px 20px;
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.18);
+}
+.cookie-banner-text { display: flex; align-items: flex-start; gap: 14px; }
+.cookie-banner-ico {
+  flex-shrink: 0;
+  width: 38px; height: 38px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 11px;
+  background: var(--blue-soft);
+  color: var(--blue-2);
+}
+.cookie-banner-ico svg { width: 20px; height: 20px; }
+.cookie-banner-text strong { display: block; font-size: 14.5px; color: var(--ink); margin-bottom: 3px; }
+.cookie-banner-text p { font-size: 13px; line-height: 1.55; color: var(--ink-60); margin: 0; }
+.cookie-banner-text a { color: var(--blue-2); font-weight: 500; text-decoration: underline; text-underline-offset: 2px; }
+.cookie-banner-actions { display: flex; gap: 10px; flex-shrink: 0; }
+
+.cookie-btn {
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 13.5px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease);
+}
+.cookie-btn-primary {
+  background: var(--blue);
+  color: #fff;
+  border: 1.5px solid var(--blue);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.28);
+}
+.cookie-btn-primary:hover { background: var(--blue-2); border-color: var(--blue-2); }
+.cookie-btn-ghost {
+  background: transparent;
+  color: var(--ink-60);
+  border: 1.5px solid var(--line);
+}
+.cookie-btn-ghost:hover { border-color: var(--ink-40); color: var(--ink); }
+
+/* Enlace "Configurar cookies" en el footer */
+.footer-legal [data-cookie-settings] { cursor: pointer; }
+
+/* Placeholder cuando Cal.com está bloqueado por falta de consentimiento */
+.cal-blocked {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+  min-height: inherit; height: 100%;
+  gap: 6px;
+  padding: 40px 24px;
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: 14px;
+}
+.cal-blocked-ico {
+  width: 46px; height: 46px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 13px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  color: var(--ink-40);
+  margin-bottom: 8px;
+}
+.cal-blocked-ico svg { width: 22px; height: 22px; }
+.cal-blocked-title { font-size: 15px; font-weight: 600; color: var(--ink); margin: 0; }
+.cal-blocked-text { font-size: 13.5px; color: var(--ink-60); margin: 0; max-width: 34ch; }
+.cal-blocked-actions { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 12px; }
+.cal-blocked-link { font-size: 13px; color: var(--blue-2); font-weight: 500; text-decoration: underline; text-underline-offset: 2px; }
+
+@media (max-width: 768px) {
+  .cookie-banner { bottom: 12px; width: calc(100vw - 20px); }
+  .cookie-banner-inner { flex-direction: column; align-items: stretch; gap: 16px; padding: 18px; border-radius: 16px; }
+  .cookie-banner-actions { width: 100%; }
+  .cookie-btn { flex: 1; padding: 12px 16px; text-align: center; }
+}

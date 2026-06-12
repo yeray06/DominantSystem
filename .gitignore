@@ -6,5 +6,8 @@ image-slot.js
 *.ps1
 assets/_gen_og.py
 
+# Capturas de prueba / verificación
+_shot_*.png
+
 # Claude Code (settings locales)
 .claude/

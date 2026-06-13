@@ -67,7 +67,7 @@ def base_canvas():
     img.alpha_composite(dots)
     return img
 
-def draw_panel(d, cx, cy, r=150):
+def draw_panel(d, cx, cy, r=140):
     """Panel circular suave que contiene el motivo."""
     d.ellipse([cx-r, cy-r, cx+r, cy+r], fill=(*BLUE, 26))
     d.ellipse([cx-r+22, cy-r+22, cx+r-22, cy+r-22], outline=(*SOFT, 90), width=3)
@@ -144,29 +144,44 @@ COVERS = [
          motif=motif_alerta),
 ]
 
+# Márgenes de seguridad: todo el contenido vive dentro de esta zona para que,
+# aunque la tarjeta recorte un poco la imagen, nunca se corte el texto.
+PADX = 110          # margen izquierdo del texto
+TEXT_MAXW = 520     # ancho máximo del titular (deja hueco al motivo)
+MOTIF_CX = 900      # centro del motivo (panel r=140 -> borde der. en 1040, 160px de margen)
+
 for c in COVERS:
     img = base_canvas()
     d = ImageDraw.Draw(img)
     # franja de acento izquierda
     d.rectangle([0, 0, 6, H], fill=(*BLUE, 255))
     # marca arriba izquierda
-    bx, by, bs = 80, 70, 56
+    bx, by, bs = PADX, 64, 54
     d.rounded_rectangle([bx, by, bx+bs, by+bs], radius=14, fill=(*BLUE, 255))
-    d.text((bx+bs//2, by+bs//2), "DS", font=font(True, 24), anchor="mm", fill=WHITE)
-    d.text((bx+bs+16, by+bs//2), "Dominant System", font=font(False, 22), anchor="lm", fill=MUTED)
+    d.text((bx+bs//2, by+bs//2), "DS", font=font(True, 23), anchor="mm", fill=WHITE)
+    d.text((bx+bs+16, by+bs//2), "Dominant System", font=font(False, 21), anchor="lm", fill=MUTED)
+
+    # Bloque texto (pill + titular) centrado verticalmente con holgura
+    tf = font(True, 48)
+    pf = font(True, 20)
+    lines = wrap(d, c["title"], tf, TEXT_MAXW)
+    line_h = 60
+    pill_h = 44
+    gap = 22
+    block_h = pill_h + gap + line_h * len(lines)
+    top = (H - block_h) // 2 + 6
+
     # pill de categoría
-    pf = font(True, 22)
     pw = d.textlength(c["cat"], font=pf)
-    d.rounded_rectangle([80, 250, 80+pw+44, 298], radius=24, outline=(*SOFT, 200), width=2, fill=(*BLUE, 40))
-    d.text((80+22, 274), c["cat"], font=pf, anchor="lm", fill=(*SOFT, 255))
-    # título (con palabra de acento resaltada)
-    tf = font(True, 58)
-    lines = wrap(d, c["title"], tf, 600)
-    y = 330
+    d.rounded_rectangle([PADX, top, PADX + pw + 40, top + pill_h], radius=22,
+                        outline=(*SOFT, 200), width=2, fill=(*BLUE, 40))
+    d.text((PADX + 20, top + pill_h // 2), c["cat"], font=pf, anchor="lm", fill=(*SOFT, 255))
+
+    # titular (con palabra de acento resaltada)
+    y = top + pill_h + gap
     accent = c["accent"]
     for ln in lines:
-        x = 80
-        # resaltar palabra(s) de acento
+        x = PADX
         if accent and accent in ln:
             before, after = ln.split(accent, 1)
             if before:
@@ -176,11 +191,12 @@ for c in COVERS:
                 d.text((x, y), after, font=tf, fill=WHITE)
         else:
             d.text((x, y), ln, font=tf, fill=WHITE)
-        y += 70
+        y += line_h
+
     # url abajo
-    d.text((80, H-58), "dominant.es/blog", font=font(False, 22), anchor="lm", fill=MUTED)
-    # motivo a la derecha
-    c["motif"](d, 935, 315)
+    d.text((PADX, H - 56), "dominant.es/blog", font=font(False, 21), anchor="lm", fill=MUTED)
+    # motivo a la derecha (dentro de la zona segura)
+    c["motif"](d, MOTIF_CX, 315)
 
     out_png = os.path.join(OUTDIR, c["slug"] + ".png")
     img.convert("RGB").save(out_png, "PNG", optimize=True)

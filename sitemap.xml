@@ -13,6 +13,42 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://dominant.es/sobre-mi.html</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dominant.es/blog.html</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dominant.es/blog/cuanto-cuesta-una-web.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dominant.es/blog/por-que-tu-negocio-necesita-web.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dominant.es/blog/diseno-web-sierra-de-madrid.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dominant.es/blog/senales-web-pierde-clientes.html</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://dominant.es/privacidad.html</loc>
     <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>

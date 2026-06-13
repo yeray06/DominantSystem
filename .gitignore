@@ -1,13 +1,14 @@
-# Archivos de desarrollo
+# Scripts de desarrollo
+assets/_gen_*.py
+*.ps1
 uploads/
 screenshots/
 .thumbnail
 image-slot.js
-*.ps1
-assets/_gen_og.py
 
 # Capturas de prueba / verificación
 _shot_*.png
+_sim_*.png
 
 # Claude Code (settings locales)
 .claude/

@@ -1075,6 +1075,10 @@ h1, h2, h3 { font-weight: 500; letter-spacing: -0.03em; line-height: 1.08; }
   background: var(--blue-2);
 }
 @media (hover: none), (pointer: coarse) { .cursor-ring, .cursor-dot { display: none !important; } }
+/* Sobre el calendario de Cal.com usamos el cursor normal del sistema
+   (el cursor personalizado se oculta por JS al entrar en el iframe). */
+.has-custom-cursor .cal-inline,
+.has-custom-cursor .cal-inline iframe { cursor: auto; }
 
 /* ---------- Button shine sweep (filled CTAs) ---------- */
 .btn-orange, .btn-dark { position: relative; overflow: hidden; }

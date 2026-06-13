@@ -413,24 +413,64 @@
     document.body.appendChild(dot);
     document.documentElement.classList.add('has-custom-cursor');
     var x = window.innerWidth / 2, y = window.innerHeight / 2;
-    var rx = x, ry = y, shown = false;
+    var rx = x, ry = y, shown = false, overCal = false;
     var interactive = 'a, button, .card, .card-hover, .acc summary, .faq summary, input, select, textarea, .panel-btn, .footer-social a';
+
+    function showCursor() {
+      if (overCal) return;
+      if (!shown) { shown = true; ring.classList.add('is-visible'); dot.classList.add('is-visible'); }
+    }
+    function hideCursor() {
+      if (!shown) return;
+      shown = false; ring.classList.remove('is-visible'); dot.classList.remove('is-visible');
+    }
+
     document.addEventListener('mousemove', function (e) {
       x = e.clientX; y = e.clientY;
+      // Sobre el iframe de Cal.com el puntero no genera mousemove; si quedara
+      // alguno residual, mantenemos el cursor oculto y no lo reposicionamos.
+      if (overCal) { hideCursor(); return; }
       dot.style.transform = 'translate3d(' + x + 'px,' + y + 'px,0)';
-      if (!shown) { shown = true; ring.classList.add('is-visible'); dot.classList.add('is-visible'); }
+      showCursor();
       var hot = !!(e.target.closest && e.target.closest(interactive));
       ring.classList.toggle('is-big', hot);
       dot.classList.toggle('is-hot', hot);
     });
-    document.addEventListener('mousedown', function () { ring.classList.add('is-down'); });
+    document.addEventListener('mousedown', function () { if (!overCal) ring.classList.add('is-down'); });
     document.addEventListener('mouseup', function () { ring.classList.remove('is-down'); });
-    document.addEventListener('mouseleave', function () {
-      shown = false; ring.classList.remove('is-visible'); dot.classList.remove('is-visible');
+    document.addEventListener('mouseleave', hideCursor);
+    document.addEventListener('mouseenter', function () { if (!overCal) showCursor(); });
+
+    /* ---- Ocultar el cursor personalizado sobre el embed de Cal.com ----
+       El iframe es cross-origin: el puntero no puede "entrar" en él y el
+       cursor se quedaría congelado en el borde. Detectamos la entrada/salida
+       del contenedor del calendario (.cal-inline) y ocultamos/mostramos el
+       cursor de forma limpia. Solo se aplica cuando el iframe real está
+       cargado (no sobre el placeholder previo al consentimiento). */
+    function bindCalZone(zone) {
+      zone.addEventListener('mouseenter', function () {
+        if (!zone.querySelector('iframe')) return; // aún no cargado: cursor normal de la web
+        overCal = true;
+        ring.classList.remove('is-down', 'is-big');
+        dot.classList.remove('is-hot');
+        hideCursor();
+      });
+      zone.addEventListener('mouseleave', function () {
+        overCal = false; // reaparece suavemente con el primer mousemove fuera del calendario
+      });
+    }
+    document.querySelectorAll('.cal-inline').forEach(bindCalZone);
+
+    // Red de seguridad: si el usuario hace clic dentro del calendario, el iframe
+    // toma el foco y la ventana lo pierde -> ocultamos también el cursor.
+    window.addEventListener('blur', function () {
+      var ae = document.activeElement;
+      if (ae && ae.tagName === 'IFRAME' && ae.closest && ae.closest('.cal-inline')) {
+        overCal = true; hideCursor();
+      }
     });
-    document.addEventListener('mouseenter', function () {
-      if (!shown) { shown = true; ring.classList.add('is-visible'); dot.classList.add('is-visible'); }
-    });
+    window.addEventListener('focus', function () { overCal = false; });
+
     (function loop() {
       rx += (x - rx) * 0.18;
       ry += (y - ry) * 0.18;
